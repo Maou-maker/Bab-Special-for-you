@@ -1,17 +1,20 @@
-body {
+/* Pastikan html dan body tinggi penuh */
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: sans-serif;
   overflow-x: hidden;
   color: #eee;
-  background-color: #000; /* fallback warna */
+  background-color: #000; /* fallback jika gambar gagal dimuat */
   position: relative;
   z-index: 0;
 }
 
-/* Tambahkan background sebagai layer paling belakang */
+/* Background layer */
 body::before {
   content: "";
-  position: fixed;
+  position: absolute; /* Gunakan absolute agar muncul di HP */
   top: 0;
   left: 0;
   width: 100%;
@@ -20,9 +23,15 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   z-index: -1;
-  opacity: 0.3; /* Bisa kamu atur sesuai kejelasan teks */
+  opacity: 0.3;
+}
+
+/* Optional: Jika ingin efek parallax di desktop saja */
+@media (min-width: 768px) {
+  body::before {
+    position: fixed;
+  }
 }
 
 .container {
@@ -76,4 +85,31 @@ body::before {
 
 #toggle-music:hover {
   background-color: #00cccc;
+}
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.character-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+  text-align: center;
+}
+
+.character-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.character-info {
+  color: #eee;
+  font-size: 0.9rem;
 }
