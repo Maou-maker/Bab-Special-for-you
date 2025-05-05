@@ -51,9 +51,28 @@
 <div class="footer">
   <a href="index.html">Kembali ke halaman utama</a>
 </div>
-
-    <div class="footer">
-      <a href="index.html">Kembali ke halaman utama</a>
+<div class="audio-controls">
+    <button id="toggle-music">Play Music</button>
+    <audio id="bg-music" loop>
+      <source src="audio/charsound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  
+  <script>
+    const music = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("toggle-music");
+  
+    toggleBtn.addEventListener("click", function () {
+      if (music.paused) {
+        music.play();
+        toggleBtn.textContent = "Pause Music";
+      } else {
+        music.pause();
+        toggleBtn.textContent = "Play Music";
+      }
+    });
+  </script>  
     </div>
   </div>
 </body>
