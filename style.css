@@ -1,13 +1,28 @@
 body {
-  background-color: #111;
-  color: #eee;
   margin: 0;
   font-family: sans-serif;
   overflow-x: hidden;
+  color: #eee;
+  background-color: #000; /* fallback warna */
+  position: relative;
+  z-index: 0;
 }
 
-.side-image {
-  background-image: none;
+/* Tambahkan background sebagai layer paling belakang */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/background-night-city.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.3; /* Bisa kamu atur sesuai kejelasan teks */
 }
 
 .container {
@@ -39,10 +54,11 @@ body {
   color: cyan;
   text-decoration: none;
 }
+
 .audio-controls {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
 }
 
@@ -60,19 +76,4 @@ body {
 
 #toggle-music:hover {
   background-color: #00cccc;
-}
-.audio-controls {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-body {
-  background-image: url('images/background-night-city.png'); /* Ganti dengan path gambar baru */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #ffffff;
-  background-color: #000000; /* fallback kalau gambar gagal dimuat */
 }
