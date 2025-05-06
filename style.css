@@ -153,8 +153,8 @@ body::before {
 }
 .footer-btn {
   display: inline-block;
-  background-color: #00ffff;
-  color: #000;
+  background-color: #00ffff; /* kotak biru terang */
+  color: #000; /* teks hitam kontras */
   padding: 6px 12px;
   border-radius: 6px;
   text-decoration: none;
@@ -165,4 +165,6 @@ body::before {
 
 .footer-btn:hover {
   background-color: #00cccc;
+  color: #000;
 }
+
