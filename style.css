@@ -31,6 +31,7 @@ body::before {
 @media (min-width: 768px) {
   body::before {
     position: fixed;
+    pointer-events: none;
   }
 }
 
@@ -167,4 +168,11 @@ body::before {
 
 .footer-btn:hover {
   background-color: #00cccc;
+}
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #555;
+  position: relative;  /* tambahkan ini */
+  z-index: 1;           /* tambahkan ini */
 }
