@@ -152,27 +152,11 @@ body::before {
   background-color: #00cccc;
 }
 .footer-btn {
-  display: inline-block;
-  background-color: #00ffff; /* kotak biru terang */
-  color: #000; /* teks hitam kontras */
-  padding: 6px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 4px;
-  transition: background-color 0.3s;
-}
-
-.footer-btn:hover {
-  background-color: #00cccc;
-  color: #000;
-}
-.footer-btn {
   position: relative;
   z-index: 2; /* pastikan tampil di atas background */
   display: inline-block;
-  background-color: #00ffff;
-  color: #000 !important; /* paksa warna teks hitam */
+  background-color: #00ffff; /* kotak biru terang */
+  color: #000 !important; /* teks hitam kontras */
   padding: 6px 12px;
   border-radius: 6px;
   text-decoration: none;
